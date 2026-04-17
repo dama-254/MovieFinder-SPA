@@ -26,3 +26,14 @@ img {
   margin-top: 1rem;
   border-radius: 5px;
 }
+
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.movie-card {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+}
