@@ -15,22 +15,7 @@ async function fetchMovie(title) {
 
   return data;
 }
-// async function fetchMovie(title) {
-// //   const res = await fetch('http://www.omdbapi.com/?i=tt3896198&apikey=3ff1173f');
-// const res = await fetch (`http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`);
-  
-//   if (!res.ok) {
-//     throw new Error('Network error. Please try again.');
-//   }
 
-//   const data = await res.json();
-
-//   if (data.Response === 'False') {
-//     throw new Error(data.Error || 'Movie not found.');
-//   }
-
-//   return data;
-// }
 
 function displayMovie(data) {
   const resultDiv = document.getElementById('movieResult');
