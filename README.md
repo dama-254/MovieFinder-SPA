@@ -1,0 +1,1 @@
+A modern Single Page Application (SPA) that allows users to search for movie information using the OMDb API. This project demonstrates clean JavaScript logic, asynchronous data fetching, and robust unit testing with Jest.
