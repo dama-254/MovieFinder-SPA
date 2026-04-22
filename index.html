@@ -1,20 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Movie Finder SPA</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieFinder — Discover Great Films</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>🎬 Movie Finder</h1>
- 
-  <form id="searchForm">
-    <input type="text" id="movieInput" placeholder="Enter movie title" required>
-    <button type="submit">Search</button>
-  </form>
- 
-  <div id="movieResult"></div>
- 
+
+  <header class="site-header" role="banner">
+    <div class="brand-block">
+      <h1 class="brand">
+        <span class="brand-accent">M</span>ovie
+        <span class="brand-accent">F</span>inder
+      </h1>
+      <p class="brand-sub">Search · Discover · Explore</p>
+    </div>
+
+    <!-- SEARCH FORM — id="searchForm" matches test -->
+    <form
+      id="searchForm"
+      class="search-form"
+      role="search"
+      aria-label="Search for a movie"
+      novalidate
+    >
+      <div class="search-wrapper">
+        <label for="movieInput" class="sr-only">Enter a movie title</label>
+        <!-- id="movieInput" matches test -->
+        <input
+          type="text"
+          id="movieInput"
+          class="search-input"
+          placeholder="Enter a movie title…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-required="true"
+        />
+        <button type="submit" class="search-btn" aria-label="Search movie">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true" width="18" height="18">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span>Search</span>
+        </button>
+      </div>
+      <p class="search-hint">Try: Inception · The Godfather · Interstellar · Titanic</p>
+    </form>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ERROR — id="errorMessage" matches test -->
+    <div
+      id="errorMessage"
+      class="error-container"
+      role="alert"
+      aria-live="assertive"
+      style="display:none;"
+    ></div>
+
+    <!-- RESULTS — id="movieResult" matches test -->
+    <div id="movieResult" class="movie-result" aria-live="polite"></div>
+
+    <!-- WELCOME STATE -->
+    <div id="welcome" class="welcome">
+      <div class="welcome-icon" aria-hidden="true">🎥</div>
+      <h2 class="welcome-title">Find Your Next Favourite Film</h2>
+      <p class="welcome-text">
+        Search any movie title to instantly see its poster, plot,
+        cast, director, ratings, and much more.
+      </p>
+      <div class="suggestions-section">
+        <p class="suggestions-label">Popular searches:</p>
+        <div class="suggestions-row" id="suggestions-row"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Data provided by the
+      <a href="https://www.omdbapi.com" target="_blank" rel="noopener">OMDB API</a>
+    </p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
