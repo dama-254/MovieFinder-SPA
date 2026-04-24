@@ -20,7 +20,6 @@
       <p class="brand-sub">Search · Discover · Explore</p>
     </div>
 
-    <!-- SEARCH FORM — id="searchForm" matches test -->
     <form
       id="searchForm"
       class="search-form"
@@ -30,7 +29,6 @@
     >
       <div class="search-wrapper">
         <label for="movieInput" class="sr-only">Enter a movie title</label>
-        <!-- id="movieInput" matches test -->
         <input
           type="text"
           id="movieInput"
@@ -50,13 +48,21 @@
           <span>Search</span>
         </button>
       </div>
-      <p class="search-hint">Try: Inception · The Godfather · Interstellar · Titanic</p>
+      <p class="search-hint">
+        Try: Inception · The Godfather · Interstellar · Titanic
+      </p>
     </form>
   </header>
 
   <main id="main-content" role="main">
 
-    <!-- ERROR — id="errorMessage" matches test -->
+    <!-- Loading -->
+    <div id="loading" class="loading" aria-live="polite" hidden>
+      <div class="spinner"><span></span><span></span><span></span></div>
+      <p>Searching for your movie…</p>
+    </div>
+
+    <!-- Error -->
     <div
       id="errorMessage"
       class="error-container"
@@ -65,20 +71,20 @@
       style="display:none;"
     ></div>
 
-    <!-- RESULTS — id="movieResult" matches test -->
-    <div id="movieResult" class="movie-result" aria-live="polite"></div>
+    <!-- Results -->
+    <section id="movieResult" class="movie-result" aria-live="polite"></section>
 
-    <!-- WELCOME STATE -->
+    <!-- Welcome -->
     <div id="welcome" class="welcome">
-      <div class="welcome-icon" aria-hidden="true">🎥</div>
+      <div class="welcome-icon" aria-hidden="true">🎬</div>
       <h2 class="welcome-title">Find Your Next Favourite Film</h2>
       <p class="welcome-text">
-        Search any movie title to instantly see its poster, plot,
+        Search any movie title to instantly view its poster, plot,
         cast, director, ratings, and much more.
       </p>
-      <div class="suggestions-section">
+      <div class="suggestions-block">
         <p class="suggestions-label">Popular searches:</p>
-        <div class="suggestions-row" id="suggestions-row"></div>
+        <div id="suggestions-row" class="suggestions-row"></div>
       </div>
     </div>
 
